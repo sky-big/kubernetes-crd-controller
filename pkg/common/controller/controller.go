@@ -141,9 +141,6 @@ type Impl struct {
 	// performance benefits, raw logger also preserves type-safety at
 	// the expense of slightly greater verbosity.
 	logger *zap.SugaredLogger
-
-	// StatsReporter is used to send common controller metrics.
-	statsReporter StatsReporter
 }
 
 // NewImpl instantiates an instance of our controller that will feed work to the
