@@ -1,4 +1,4 @@
-# Build binary
+# Build all binary
 #
 # Example:
 #   make
@@ -13,6 +13,14 @@ all: build
 build:
 	go build -v -o ./bin/controller ./cmd/controller
 .PHONY: build
+
+# Generate code
+#
+# Example:
+#   make generate
+generate:
+	hack/codegen.sh
+.PHONY: generate
 
 # Clean package
 #
