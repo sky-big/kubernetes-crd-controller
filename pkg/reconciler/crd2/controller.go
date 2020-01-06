@@ -12,9 +12,11 @@ import (
 func NewController(
 	ctx context.Context,
 ) *controller.Impl {
+	logger := logging.FromContext(ctx)
 
 	c := &Reconciler{}
-	impl := controller.NewImpl(c, logging.FromContext(ctx), ReconcilerName)
+	impl := controller.NewImpl(c, logger, ReconcilerName)
 
+	logger.Info("CRD2 Controller Started")
 	return impl
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
 	"github.com/sky-big/kubernetes-crd-controller/pkg/reconciler/crd1"
 	"github.com/sky-big/kubernetes-crd-controller/pkg/reconciler/crd2"
+	"github.com/sky-big/kubernetes-crd-controller/pkg/common/signals"
 
 	"golang.org/x/sync/errgroup"
 )
@@ -15,7 +16,7 @@ import (
 type ControllerConstructor func(context.Context) *controller.Impl
 
 func main() {
-	ctx := context.Background()
+	ctx := signals.NewContext()
 	ctors := []ControllerConstructor{
 		crd1.NewController,
 		crd2.NewController,
@@ -25,6 +26,8 @@ func main() {
 		ctrl := cf(ctx)
 		controllers = append(controllers, ctrl)
 	}
+
+	go controller.StartAll(ctx.Done(), controllers...)
 
 	eg, egCtx := errgroup.WithContext(ctx)
 	<-egCtx.Done()

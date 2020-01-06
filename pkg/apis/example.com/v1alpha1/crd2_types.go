@@ -6,30 +6,33 @@ import (
 
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-type CRD1 struct {
+type CRD2 struct {
 	metav1.TypeMeta `json:",inline"`
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +optional
-	Spec CRD1Spec `json:"spec,omitempty"`
+	Spec CRD2Spec `json:"spec,omitempty"`
 	// +optional
-	Status CRD1Status `json:"status,omitempty"`
+	Status CRD2Status `json:"status,omitempty"`
 }
 
-type CRD1Spec struct {
+type CRD2Spec struct {
 	// +optional
 	Generation int64 `json:"generation,omitempty"`
+
+	// +optional
+	V1alpha1 int64 `json:"v1alpha1,omitempty"`
 }
 
-type CRD1Status struct {
+type CRD2Status struct {
 	// +optional
-	Generation int64 `json:"generation,omitempty"`
+	Phase int64 `json:"phase,omitempty"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-type CRD1List struct {
+type CRD2List struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata"`
 
-	Items []CRD1 `json:"items"`
+	Items []CRD2 `json:"items"`
 }
