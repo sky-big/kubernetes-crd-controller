@@ -11,7 +11,7 @@ all: build
 # Example:
 #   make build
 build:
-    go build -v -o ./bin/service ./cmd/service
+	go build -v -o ./bin/service ./cmd/service
 .PHONY: build
 
 # Clean package
