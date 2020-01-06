@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
 	"github.com/sky-big/kubernetes-crd-controller/pkg/reconciler/crd1"
 	"github.com/sky-big/kubernetes-crd-controller/pkg/reconciler/crd2"
 
 	"golang.org/x/sync/errgroup"
-	"knative.dev/pkg/controller"
 )
 
 type ControllerConstructor func(context.Context) *controller.Impl

@@ -6,6 +6,11 @@ import (
 	"go.uber.org/zap"
 )
 
+const (
+	TraceId = "traceid"
+	Key     = "key"
+)
+
 type loggerKey struct{}
 
 // This logger is used when there is no logger attached to the context.

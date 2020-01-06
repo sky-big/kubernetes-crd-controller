@@ -3,9 +3,8 @@ package crd1
 import (
 	"context"
 
+	"github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
 	"github.com/sky-big/kubernetes-crd-controller/pkg/common/logging"
-
-	"knative.dev/pkg/controller"
 )
 
 // NewController initializes the controller and is called by the generated code
