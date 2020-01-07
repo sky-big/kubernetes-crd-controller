@@ -3,7 +3,7 @@ kind: CustomResourceDefinition
 metadata:
   labels:
     example.dev/release: "v0.0.1"
-  name: crd1.example.dev
+  name: crd1s.example.dev
 spec:
   group: example.dev
   names:
@@ -23,7 +23,7 @@ kind: CustomResourceDefinition
 metadata:
   labels:
     example.dev/release: "v0.0.1"
-  name: crd2.example.dev
+  name: crd2s.example.dev
 spec:
   group: example.dev
   names:
