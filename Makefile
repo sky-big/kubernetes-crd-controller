@@ -11,8 +11,40 @@ all: build
 # Example:
 #   make build
 build:
-	go build -v -o ./bin/controller ./cmd/controller
+	go build -v -o ./bin/kubernetes-crd-controller ./cmd/controller
 .PHONY: build
+
+# Install controller
+#
+# Example:
+#   make install
+install:
+	deploy/install.sh
+.PHONY: install
+
+# UnInstall controller
+#
+# Example:
+#   make uninstall
+uninstall:
+	deploy/uninstall.sh
+.PHONY: uninstall
+
+# Build the docker image
+#
+# Example:
+#   make image
+image:
+	docker/build-image.sh
+.PHONY: image
+
+# Push the docker image
+#
+# Example:
+#   make push
+push:
+	docker/push-image.sh
+.PHONY: push
 
 # Generate code
 #

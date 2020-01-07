@@ -17,8 +17,8 @@ func NewController(
 	crd2Informer := crd2.Get(ctx)
 
 	c := &Reconciler{
-		crd2V1alpha1Informer: crd2Informer,
-		crd2V1alpha1Lister:   crd2Informer.Lister(),
+		crd2Informer: crd2Informer,
+		crd2Lister:   crd2Informer.Lister(),
 	}
 	impl := controller.NewImpl(c, logger, ReconcilerName)
 

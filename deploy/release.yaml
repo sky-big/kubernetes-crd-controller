@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-crd-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: kubernetes-crd-controller
+  template:
+    metadata:
+      labels:
+        name: kubernetes-crd-controller
+    spec:
+      serviceAccountName: kubernetes-crd-controller
+      containers:
+        - name: kubernetes-crd-controller
+          image: "skybig/kubernetes-crd-controller:latest"
+          command:
+          - kubernetes-crd-controller
+          imagePullPolicy: Always
