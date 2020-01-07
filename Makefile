@@ -22,6 +22,14 @@ generate:
 	hack/codegen.sh
 .PHONY: generate
 
+# Generate vendor
+#
+# Example:
+#   make vendor
+vendor:
+	go mod vendor
+.PHONY: vendor
+
 # Clean package
 #
 # Example:
