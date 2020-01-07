@@ -23,8 +23,8 @@ import (
 
 	crd2 "github.com/sky-big/kubernetes-crd-controller/pkg/client/injection/informers/example/v1alpha1/crd2"
 	fake "github.com/sky-big/kubernetes-crd-controller/pkg/client/injection/informers/factory/fake"
-	controller "knative.dev/pkg/controller"
-	injection "knative.dev/pkg/injection"
+	controller "github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
+	injection "github.com/sky-big/kubernetes-crd-controller/pkg/common/injection"
 )
 
 var Get = crd2.Get

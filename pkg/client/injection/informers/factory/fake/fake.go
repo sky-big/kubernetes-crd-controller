@@ -24,8 +24,8 @@ import (
 	externalversions "github.com/sky-big/kubernetes-crd-controller/pkg/client/informers/externalversions"
 	fake "github.com/sky-big/kubernetes-crd-controller/pkg/client/injection/client/fake"
 	factory "github.com/sky-big/kubernetes-crd-controller/pkg/client/injection/informers/factory"
-	controller "knative.dev/pkg/controller"
-	injection "knative.dev/pkg/injection"
+	controller "github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
+	injection "github.com/sky-big/kubernetes-crd-controller/pkg/common/injection"
 )
 
 var Get = factory.Get

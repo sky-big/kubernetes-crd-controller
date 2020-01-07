@@ -22,9 +22,9 @@ import (
 	"context"
 
 	versioned "github.com/sky-big/kubernetes-crd-controller/pkg/client/clientset/versioned"
+	injection "github.com/sky-big/kubernetes-crd-controller/pkg/common/injection"
+	logging "github.com/sky-big/kubernetes-crd-controller/pkg/common/logging"
 	rest "k8s.io/client-go/rest"
-	injection "knative.dev/pkg/injection"
-	logging "knative.dev/pkg/logging"
 )
 
 func init() {

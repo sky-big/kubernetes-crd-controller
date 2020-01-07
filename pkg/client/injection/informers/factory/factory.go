@@ -23,9 +23,9 @@ import (
 
 	externalversions "github.com/sky-big/kubernetes-crd-controller/pkg/client/informers/externalversions"
 	client "github.com/sky-big/kubernetes-crd-controller/pkg/client/injection/client"
-	controller "knative.dev/pkg/controller"
-	injection "knative.dev/pkg/injection"
-	logging "knative.dev/pkg/logging"
+	controller "github.com/sky-big/kubernetes-crd-controller/pkg/common/controller"
+	injection "github.com/sky-big/kubernetes-crd-controller/pkg/common/injection"
+	logging "github.com/sky-big/kubernetes-crd-controller/pkg/common/logging"
 )
 
 func init() {
