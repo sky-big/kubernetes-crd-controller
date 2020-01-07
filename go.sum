@@ -240,6 +240,7 @@ k8s.io/kube-openapi v0.0.0-20191107075043-30be4d16710a/go.mod h1:1TqjTSzOxsLGIKf
 k8s.io/utils v0.0.0-20191218082557-f07c713de883 h1:TA8t8OLS8m3/0dtTckekO0pCQ7qMnD19fsZTQEgCSKQ=
 k8s.io/utils v0.0.0-20191218082557-f07c713de883/go.mod h1:sZAwmy6armz5eXlNoLmJcl4F1QuKu7sr+mFQ0byX7Ew=
 knative.dev/pkg v0.0.0-20200102192742-169ef0797c1f h1:CLWkzkLz7mZLKMLA8hC0R+16eFg31Gx3ljr2hiatEUs=
+knative.dev/pkg v0.0.0-20200106235749-a43659c656a7 h1:wWWyzML97Jt3iqjHk54Mpd1TG5gTWCRF7VIcLWYR5Gw=
 modernc.org/cc v1.0.0/go.mod h1:1Sk4//wdnYJiUIxnW8ddKpaOJCF37yAdqYnkxUpaYxw=
 modernc.org/golex v1.0.0/go.mod h1:b/QX9oBD/LhixY6NDh+IdGv17hgB+51fET1i2kPSmvk=
 modernc.org/mathutil v1.0.0/go.mod h1:wU0vUrJsVWBZ4P6e7xtFJEhFSNsfRLJ8H458uRjg03k=
