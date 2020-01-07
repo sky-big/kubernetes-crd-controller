@@ -11,7 +11,7 @@ all: build
 # Example:
 #   make build
 build:
-	go build -v -o ./bin/kubernetes-crd-controller ./cmd/controller
+	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -v -o ./bin/kubernetes-crd-controller ./cmd/controller
 .PHONY: build
 
 # Install controller
@@ -35,7 +35,7 @@ uninstall:
 # Example:
 #   make image
 image:
-	docker/build-image.sh
+	image/build-image.sh
 .PHONY: image
 
 # Push the docker image
@@ -43,7 +43,7 @@ image:
 # Example:
 #   make push
 push:
-	docker/push-image.sh
+	image/push-image.sh
 .PHONY: push
 
 # Generate code
@@ -51,7 +51,7 @@ push:
 # Example:
 #   make generate
 generate:
-	hack/codegen.sh
+	hack/codegen/codegen.sh
 .PHONY: generate
 
 # Generate vendor

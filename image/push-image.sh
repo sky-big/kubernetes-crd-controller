@@ -6,10 +6,10 @@ cd ${WORK_DIR}
 IMAGE=skybig/kubernetes-crd-controller:latest
 
 # build controller
-cd .. && make build && cd ./docker
+cd ${WORK_DIR}/.. && make build && cd ${WORK_DIR}
 
 # get controller bin
-cp ../bin/kubernetes-crd-controller ./
+cp ${WORK_DIR}/../bin/kubernetes-crd-controller ./
 
 echo "[START] build controller images"
 
