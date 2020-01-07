@@ -21,6 +21,8 @@ import (
 	"k8s.io/client-go/util/workqueue"
 )
 
+type ControllerConstructor func(context.Context) *Impl
+
 const (
 	// DefaultResyncPeriod is the default duration that is used when no
 	// resync period is associated with a controllers initialization context.
