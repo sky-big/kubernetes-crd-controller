@@ -1,0 +1,6 @@
+apiVersion: example.dev/v1alpha1
+kind: CRD1
+metadata:
+  name: test-crd1
+spec:
+  v1alpha1: v1alpha1
