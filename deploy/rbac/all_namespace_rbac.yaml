@@ -11,6 +11,12 @@ metadata:
   name: kubernetes-crd-controller
 rules:
 - apiGroups:
+  - example.dev
+  resources:
+  - "*"
+  verbs:
+  - "*"
+- apiGroups:
   - ""
   resources:
   - pods
