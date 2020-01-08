@@ -46,6 +46,59 @@ spec:
       JSONPath: .status.phase
 ```
 
+## 子资源
+
+自定义资源可以支持/status和/scale子资源。此特性在1.11版本中处于Beta状态且默认启用。你需要在CRD中进行定义才能启用这些子资源。
+
+scale子资源支持让其他K8S组件（例如HorizontalPodAutoscaler和PodDisruptionBudget控制器）与你的CR进行交互。kubectl scale也可以利用该子资源对CR进行扩容。
+
+status子资源可以让你把资源的规格和状态分开。
+
+/status
+启用状态子资源后，自定义资源的/status URL可用：
+
+(1). 数据对应资源的.status字段
+(2). PUT /status仅仅会修改.status字段，也仅仅对该字段进行验证
+(3). 对资源本身进行PUT/POST/PATCH操作，会忽视.status字段
+(4). 每次修改.spec字段，都导致.metadata.generation ++ 
+
+/scale
+启用扩容子资源后，自定义资源的/scale URL可用，RESTful载荷类型为autoscaling/v1.Scale
+
+要启用扩容子资源，CRD需要指定：
+
+(1). SpecReplicasPath，指定自定义资源中对应Scale.Spec.Replicas的JSON路径。必须值
+(2). StatusReplicasPath，指定自定义资源中对应Scale.Status.Replicas的JSON路径。必须值
+(3). LabelSelectorPath，指定自定义资源中对应Scale.Status.Selector的JSON路径。可选值，和HPA联用则必须设置
+
+例如:
+```
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+spec:
+  subresources:
+    # 启用状态子资源
+    status: {}
+    # 启用扩容子资源
+    scale:
+      specReplicasPath: .spec.replicas
+      statusReplicasPath: .status.replicas
+      labelSelectorPath: .status.labelSelector
+```
+
+## Categories用于指定资源所属的类别
+
+```
+通过kubectl get all可以访问到上述CRD的自定义资源
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+spec:
+  names:
+    categories:
+    - all
+```
+
 ## 声明Kubernetes规定自定义资源的字段验证规则
 
 ```
