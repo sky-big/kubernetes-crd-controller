@@ -33,6 +33,6 @@ func (c *Reconciler) Reconcile(ctx context.Context, key string) error {
 	// Get crd1 resource with this namespace/name
 	original, err := c.crd2Lister.CRD2s(namespace).Get(name)
 
-	logger.Infof("Reconcile V1Alpha1 CRD2 Resource %+v", original)
+	logger.Infof("Reconcile CRD2 Resource %+v", original)
 	return nil
 }

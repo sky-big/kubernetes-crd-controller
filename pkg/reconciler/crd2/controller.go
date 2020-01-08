@@ -22,6 +22,8 @@ func NewController(
 	}
 	impl := controller.NewImpl(c, logger, ReconcilerName)
 
+	crd2Informer.Informer().AddEventHandler(controller.HandleAll(impl.Enqueue))
+
 	logger.Info("CRD2 Controller Started")
 	return impl
 }
