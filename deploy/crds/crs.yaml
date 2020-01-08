@@ -5,6 +5,8 @@ metadata:
 spec:
   v1alpha1: 1
 
+---
+
 apiVersion: example.dev/v1alpha1
 kind: CRD2
 metadata:
