@@ -18,7 +18,7 @@ require (
 	golang.org/x/oauth2 v0.0.0-20191202225959-858c2ad4c8b6 // indirect
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
-	golang.org/x/tools v0.0.0-20200107050322-53017a39ae36 // indirect
+	golang.org/x/tools v0.0.0-20200110042803-e2f26524b78c // indirect
 	gonum.org/v1/gonum v0.6.2 // indirect
 	gopkg.in/yaml.v2 v2.2.7 // indirect
 	k8s.io/api v0.17.0
