@@ -19,7 +19,7 @@ $ cd kubernetes-crd-controller
 $ make install
 ```
 
-3. Use command ```kubectl get pods``` to check Pulsar Operator deploy status like:
+3. Use command ```kubectl get pods``` to check Kubernetes CRD Operator deploy status like:
 ```
 $ kubectl get pods
 NAME                                         READY   STATUS    RESTARTS   AGE
